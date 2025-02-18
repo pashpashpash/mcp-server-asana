@@ -1,22 +1,14 @@
-
 # MCP Server for Asana
-
-[![npm version](https://badge.fury.io/js/%40roychri%2Fmcp-server-asana.svg)](https://www.npmjs.com/package/@roychri/mcp-server-asana)
-
-This Model Context Protocol server implementation of Asana allows you
-to talk to Asana API from MCP Client such as Anthropic's Claude
-Desktop Application, and many more.
+A fork of the @roychri's MCP (Model Context Protocol) server implementation for Asana, allowing you to interact with the Asana API from MCP clients such as Anthropic's Claude Desktop Application.
 
 More details on MCP here:
  - https://www.anthropic.com/news/model-context-protocol
  - https://modelcontextprotocol.io/introduction
  - https://github.com/modelcontextprotocol
 
-<a href="https://glama.ai/mcp/servers/ln1qzdhwmc"><img width="380" height="200" src="https://glama.ai/mcp/servers/ln1qzdhwmc/badge" alt="mcp-server-asana MCP server" /></a>
-
 ## Usage
 
-In the AI toold of your choice (ex: Claude Desktop) ask something about asana tasks, projects, workspaces, and/or comments. Mentioning the word "asana" will increase the chance of having the LLM pick the right tool.
+In the AI tool of your choice (ex: Claude Desktop) ask something about asana tasks, projects, workspaces, and/or comments. Mentioning the word "asana" will increase the chance of having the LLM pick the right tool.
 
 Example:
 
@@ -24,7 +16,7 @@ Example:
 
 Another example:
 
-![Claude Desktop Example](https://raw.githubusercontent.com/roychri/mcp-server-asana/main/mcp-server-asana-claude-example.png)
+![Claude Desktop Example](https://raw.githubusercontent.com/pashpashpash/mcp-server-asana/main/mcp-server-asana-claude-example.png)
 
 ## Tools
 
@@ -33,6 +25,7 @@ Another example:
     * Optional input:
         * opt_fields (string): Comma-separated list of optional fields to include
     * Returns: List of workspaces
+
 2. `asana_search_projects`
     * Search for projects in Asana using name pattern matching
     * Required input:
@@ -42,6 +35,7 @@ Another example:
         * archived (boolean): Only return archived projects (default: false)
         * opt_fields (string): Comma-separated list of optional fields to include
     * Returns: List of matching projects
+
 3. `asana_search_tasks`
     * Search tasks in a workspace with advanced filtering options
     * Required input:
@@ -60,6 +54,7 @@ Another example:
         * opt_fields (string): Comma-separated list of optional fields to include
         * custom_fields (object): Object containing custom field filters
     * Returns: List of matching tasks
+
 4. `asana_get_task`
     * Get detailed information about a specific task
     * Required input:
@@ -67,6 +62,7 @@ Another example:
     * Optional input:
         * opt_fields (string): Comma-separated list of optional fields to include
     * Returns: Detailed task information
+
 5. `asana_create_task`
     * Create a new task in a project
     * Required input:
@@ -81,6 +77,7 @@ Another example:
         * parent (string): The parent task ID to set this task under
         * projects (array of strings): Array of project IDs to add this task to
     * Returns: Created task information
+
 6. `asana_get_task_stories`
     * Get comments and stories for a specific task
     * Required input:
@@ -88,6 +85,7 @@ Another example:
     * Optional input:
         * opt_fields (string): Comma-separated list of optional fields to include
     * Returns: List of task stories/comments
+
 7. `asana_update_task`
     * Update an existing task's details
     * Required input:
@@ -99,6 +97,7 @@ Another example:
         * assignee (string): New assignee (can be 'me' or a user ID)
         * completed (boolean): Mark task as completed or not
     * Returns: Updated task information
+
 8. `asana_get_project`
     * Get detailed information about a specific project
     * Required input:
@@ -106,6 +105,7 @@ Another example:
     * Optional input:
         * opt_fields (string): Comma-separated list of optional fields to include
     * Returns: Detailed project information
+
 9. `asana_get_project_task_counts`
     * Get the number of tasks in a project
     * Required input:
@@ -113,6 +113,7 @@ Another example:
     * Optional input:
         * opt_fields (string): Comma-separated list of optional fields to include
     * Returns: Task count information
+
 10. `asana_get_project_sections`
     * Get sections in a project
     * Required input:
@@ -120,6 +121,7 @@ Another example:
     * Optional input:
         * opt_fields (string): Comma-separated list of optional fields to include
     * Returns: List of project sections
+
 11. `asana_create_task_story`
     * Create a comment or story on a task
     * Required input:
@@ -128,18 +130,21 @@ Another example:
     * Optional input:
         * opt_fields (string): Comma-separated list of optional fields to include
     * Returns: Created story information
+
 12. `asana_add_task_dependencies`
     * Set dependencies for a task
     * Required input:
         * task_id (string): The task ID to add dependencies to
         * dependencies (array of strings): Array of task IDs that this task depends on
     * Returns: Updated task dependencies
+
 13. `asana_add_task_dependents`
     * Set dependents for a task (tasks that depend on this task)
     * Required input:
         * task_id (string): The task ID to add dependents to
         * dependents (array of strings): Array of task IDs that depend on this task
     * Returns: Updated task dependents
+
 14. `asana_create_subtask`
     * Create a new subtask for an existing task
     * Required input:
@@ -151,6 +156,7 @@ Another example:
         * assignee (string): Assignee (can be 'me' or a user ID)
         * opt_fields (string): Comma-separated list of optional fields to include
     * Returns: Created subtask information
+
 15. `asana_get_multiple_tasks_by_gid`
     * Get detailed information about multiple tasks by their GIDs (maximum 25 tasks)
     * Required input:
@@ -158,6 +164,7 @@ Another example:
     * Optional input:
         * opt_fields (string): Comma-separated list of optional fields to include
     * Returns: List of detailed task information
+
 16. `asana_get_project_status`
     * Get a project status update
     * Required input:
@@ -165,6 +172,7 @@ Another example:
     * Optional input:
         * opt_fields (string): Comma-separated list of optional fields to include
     * Returns: Project status information
+
 17. `asana_get_project_statuses`
     * Get all status updates for a project
     * Required input:
@@ -174,6 +182,7 @@ Another example:
         * offset (string): Pagination offset token
         * opt_fields (string): Comma-separated list of optional fields to include
     * Returns: List of project status updates
+
 18. `asana_create_project_status`
     * Create a new status update for a project
     * Required input:
@@ -185,6 +194,7 @@ Another example:
         * html_text (string): HTML formatted text for the status update
         * opt_fields (string): Comma-separated list of optional fields to include
     * Returns: Created project status information
+
 19. `asana_delete_project_status`
     * Delete a project status update
     * Required input:
@@ -199,27 +209,59 @@ Another example:
         * task_id (string): The task ID to get summary for
     * Returns: A detailed prompt with instructions for generating a task summary
 
-## Resources
-
-None
-
 ## Setup
 
+### Local Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/pashpashpash/mcp-server-asana.git
+cd mcp-server-asana
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Build the project:
+```bash
+npm run build
+```
+
+### Alternative Installation
+
+You can also use `npx` to run the server directly (not recommended for development).
+
+### Configuration
 
 1. **Create an Asana account**:
-
-   - Visit the [Asana](https://www.asana.com).
-   - Click "Sign up".
+   - Visit [Asana](https://www.asana.com)
+   - Click "Sign up"
 
 2. **Retrieve the Asana Access Token**:
-
-   - You can generate a personal access token from the Asana developer console.
-     - https://app.asana.com/0/my-apps
+   - Generate a personal access token from the [Asana developer console](https://app.asana.com/0/my-apps)
    - More details here: https://developers.asana.com/docs/personal-access-token
 
 3. **Configure Claude Desktop**:
    Add the following to your `claude_desktop_config.json`:
 
+   For local installation:
+   ```json
+   {
+     "mcpServers": {
+       "asana": {
+         "command": "node",
+         "args": ["path/to/build/index.js"],
+         "env": {
+           "ASANA_ACCESS_TOKEN": "your-asana-access-token"
+         }
+       }
+     }
+   }
+   ```
+
+   For npx installation (alternative):
    ```json
    {
      "mcpServers": {
@@ -239,16 +281,13 @@ None
 If you encounter permission errors:
 
 1. Ensure the asana plan you have allows API access
-2. Confirm the access token and configuration are correctly set in `claude_desktop_config.json`.
+2. Confirm the access token and configuration are correctly set in `claude_desktop_config.json`
 
+## Development
 
-## Contributing
+### Testing Locally with the MCP Inspector
 
-Clone this repo and start hacking.
-
-### Test it locally with the MCP Inspector
-
-If you want to test your changes, you can use the MCP Inspector like this:
+To test your changes, you can use the MCP Inspector:
 
 ```bash
 npm run inspector
