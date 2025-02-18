@@ -1,5 +1,5 @@
 # MCP Server for Asana
-A fork of the @roychri's MCP (Model Context Protocol) server implementation for Asana, allowing you to interact with the Asana API from MCP clients such as Anthropic's Claude Desktop Application.
+A fork of @roychri's MCP (Model Context Protocol) server implementation for Asana, allowing you to interact with the Asana API from MCP clients such as Anthropic's Claude Desktop Application.
 
 More details on MCP here:
  - https://www.anthropic.com/news/model-context-protocol
