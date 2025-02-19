@@ -261,7 +261,7 @@ You can also use `npx` to run the server directly (not recommended for developme
    }
    ```
 
-Note: Replace "path/to/build/index.js" with the **actual path** to your built index.js file. KEEP IN MIND, by default it will be in `./dist/src/index.js` according to `tsconfig.json`:
+Note: Replace "path/to/build/index.js" with the **actual path** to your built index.js file. KEEP IN MIND, by default it will be in `./dist/index.js` according to `tsconfig.json`:
 
 ```
 {
