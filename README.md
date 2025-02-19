@@ -261,6 +261,31 @@ You can also use `npx` to run the server directly (not recommended for developme
    }
    ```
 
+Note: Replace "path/to/build/index.js" with the **actual path** to your built index.js file. KEEP IN MIND, by default it will be in `./dist/index.js` according to `tsconfig.json`:
+
+```
+{
+  "extends": "@tsconfig/node20/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "strict": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true,
+    "skipLibCheck": true
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifiers": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
+```
+
 ## Troubleshooting
 
 If you encounter permission errors:
