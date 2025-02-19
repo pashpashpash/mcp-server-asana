@@ -261,21 +261,6 @@ You can also use `npx` to run the server directly (not recommended for developme
    }
    ```
 
-   For npx installation (alternative):
-   ```json
-   {
-     "mcpServers": {
-       "asana": {
-         "command": "npx",
-         "args": ["-y", "@roychri/mcp-server-asana"],
-         "env": {
-           "ASANA_ACCESS_TOKEN": "your-asana-access-token"
-         }
-       }
-     }
-   }
-   ```
-
 ## Troubleshooting
 
 If you encounter permission errors:
